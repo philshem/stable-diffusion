@@ -79,6 +79,9 @@ ln -s "$PATH_TO_CKPT/sd-v1-4.ckpt" models/ldm/stable-diffusion-v1/model.ckpt
 PIP_EXISTS_ACTION=w CONDA_SUBDIR=osx-arm64 conda env create -f environment-mac.yaml
 conda activate ldm
 
+# to update an existing environment
+conda env update --file environment-mac.yaml --prune
+
 # only need to do this once
 python scripts/preload_models.py
 
